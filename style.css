@@ -1,0 +1,45 @@
+:root {
+    --lightest: #f5f6f7;
+    --lightlavender: #c3a3eb;
+    --subtle: #f6f2ec;
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--subtle);
+}
+header {
+    height: 10vh;
+    padding: 3vh 8vw;
+    background-color: var(--lightlavender);
+    display: flex;
+    align-items: center;
+    gap: 4vw;
+}
+button {
+    cursor: pointer;
+    height: 50%;
+}
+
+#main-container {
+    padding: 2vw;
+    display: flex;
+    justify-content: center;
+    gap: 5%;
+}
+
+#random-card-container {
+    border: 2px solid red;
+}
+
+#divider {
+    height: 70vh;
+    width: 2px;
+    background-color: black;
+}
+
+#card-attributes-container {
+    border: 2px solid blue;
+}
