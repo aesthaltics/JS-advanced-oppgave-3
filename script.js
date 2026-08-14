@@ -29,16 +29,22 @@ async function getData() {
     
     console.log("------------------------------------------------------");
     console.log(data);
+   
+    console.log("---------");
+    console.log(currentCard);
+    return data;
+}
+// await getData();
+
+// jakob's code please be kind 
+
+const buildCard = (data) => {
     currentCard.imageUrl = data.image_uris.large;
     currentCard.name = data.name;
     const typesAndSubtypes = data.type_line;
     const onlyTypes = typesAndSubtypes.split('—')[0].trim();
     currentCard.type = onlyTypes;
-
-    console.log("---------");
-    console.log(currentCard);
 }
-// await getData();
 
 function buildPage() {
     pictureContainer.replaceChildren();
@@ -54,7 +60,8 @@ function buildPage() {
 }
 
 randomBtn.addEventListener('click', async () => {
-    await getData();
+    data = await getData();
+    buildCard(data);
     buildPage();
 })
 
