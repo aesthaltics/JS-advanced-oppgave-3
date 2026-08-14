@@ -18,6 +18,8 @@ let currentCard = {
     },
 }
 
+let newData
+
 async function getData() {
     const result = await fetch("https://api.scryfall.com/cards/random", {
         headers:{
@@ -60,8 +62,8 @@ function buildPage() {
 }
 
 randomBtn.addEventListener('click', async () => {
-    data = await getData();
-    buildCard(data);
+    buildCard(newData)
+    newData = await getData();
     buildPage();
 })
 
@@ -72,4 +74,5 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     await getData();
     buildPage();
+    newData = await getData()
 })
